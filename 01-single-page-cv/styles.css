@@ -9,6 +9,9 @@ body {
   border: 2px solid #1e1e1e;
   margin: 20px auto;
 }
+header h1 {
+  margin-top: 20px;
+}
 section {
   margin: 40px 0;
 }
