@@ -1,11 +1,12 @@
 * {
   box-sizing: border-box;
   margin: 0;
+
 }
 body {
   padding: 80px 60px 0 60px;
   min-width: 500px;
-  width: 900px;
+  max-width: 900px;
   border: 2px solid #1e1e1e;
   margin: 20px auto;
 }
@@ -27,4 +28,7 @@ ul {
 }
 ul li {
   margin-top: 8px;
+}
+article {
+  margin-bottom: 25px;
 }
