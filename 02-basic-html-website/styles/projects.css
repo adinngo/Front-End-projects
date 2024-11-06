@@ -1,0 +1,30 @@
+main {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  align-items: start;
+}
+.project {
+  border: 1px solid gray;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+  transition: all ease 0.3s;
+  
+}
+.project a {
+  color: inherit;
+}
+.project .image {
+  width: 400px;
+  height: auto;
+  margin: auto;
+}
+
+.image img {
+  width: 100%;
+}
+.project:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+}

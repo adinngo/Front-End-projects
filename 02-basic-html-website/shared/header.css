@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  text-decoration: none;
+  line-height: 30px;
+}
+body {
+  padding: 60px 60px 0 60px;
+  min-width: 500px;
+  max-width: 1400px;
+  margin: 20px auto;
+}
+main,
+footer {
+  margin-bottom: 100px;
+}
+/* header */
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+header nav .logo {
+  font-size: 1.5rem;
+  color: black;
+  font-weight: lighter;
+  margin-bottom: 30px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.527);
+}
+header nav .logo a {
+  color: inherit;
+}
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 20px;
+  padding: 10px;
+  font-weight: bold;
+  transition: all ease 0.3s;
+}
+nav ul li a {
+  color: inherit;
+}
+nav ul li:hover {
+  border-bottom: 2px solid black;
+}
+header > div {
+  text-align: center;
+  margin: 170px 0 140px 0;
+}
+header h1 {
+  font-size: 4rem;
+  margin: 40px 0;
+}
+header p {
+  font-size: 1.5rem;
+  color: gray;
+}

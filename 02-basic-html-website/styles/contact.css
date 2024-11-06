@@ -1,0 +1,35 @@
+main {
+  display: flex;
+  gap: 20px;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  height: 70px;
+  text-align: center;
+  font-weight: lighter;
+  transition: all ease 0.3s;
+}
+
+a {
+  color: inherit;
+}
+
+.fb {
+  background-color: #1877f2;
+  color: whitesmoke;
+}
+
+.ins {
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  color: whitesmoke;
+}
+.git {
+  background-color: black;
+  color: whitesmoke;
+}
+button:hover {
+  letter-spacing: 8px;
+}

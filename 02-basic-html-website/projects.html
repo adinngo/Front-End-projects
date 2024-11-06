@@ -3,18 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="ThangNgo" />
-    <meta name="keywords" content="HTML, CSS, Basic Website, Web Development" />
-    <meta name="description" content="Basic HTML Website of ThangNgo, a Front-End Developer" />
-    <link rel="stylesheet" href="shared/header.css">
-    <link rel="stylesheet" href="shared/footer.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <title>Basic HTML Website</title>
+    <link rel="stylesheet" href="shared/header.css" />
+    <link rel="stylesheet" href="shared/footer.css" />
+    <link rel="stylesheet" href="styles/projects.css" />
+    <title>My Projects</title>
   </head>
   <body>
     <header>
       <nav>
-        <h3 class="logo"><a href="index.html"><em>ThangNgo</em></a></h3>
+        <h3 class="logo">
+          <a href="index.html"><em>ThangNgo</em></a>
+        </h3>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="projects.html">Projects</a></li>
@@ -28,43 +27,36 @@
       </div>
     </header>
     <main>
-      <section class="left">
-        <h3>Projects</h3>
-        <ul>
-          <li>Rock Paper Scissors game</li>
-          <li>Calculator</li>
-          <li>Todo List</li>
-        </ul>
-      </section>
-
-      <section class="middle">
-        <h3>Work Experience</h3>
-        <article>
-          <h4>roadmap.sh</h4>
-          <p>Solved all Frontend Projects</p>
-          <a href="https://github.com/adinngo/Front-End-projects" target="_blank">Visit Github</a>
-        </article>
-        <article>
-          <h4>OpenSource Work</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem cum nulla fugiat esse ab eos dolore, quaerat officia, temporibus sequi illo iusto consequatur, voluptatibus consequuntur voluptates? Libero porro ex adipisci?</p>
-           <a href="https://github.com/adinngo" target="_blank">Visit my Github Profile</a>
-        </article>
-      </section>
-
-      <section class="right">
-        <h3>Education</h3>
-        <p>Graduated with 3.76 out of 4 GPA. Won Acme Hackathon. Organized 30 sessions</p>
-        <article>
-          <h4>Courses I took</h4>
-          <ul>
-            <li>Object Oriented Programming</li>
-            <li>Data Structures and Algorithms</li>
-            <li>Web Engineering</li>
-            <li>Data Management Systems</li>
-            <li>Human Computer Interaction</li>
-          </ul>
-        </article>
-      </section>
+      <div class="project">
+        <a href="https://adinngo.github.io/rock-paper-scissor/index.html" target="_blank">
+          <article>
+            <div class="image">
+              <img src="images/rockpaperscissors.png" alt="rock-paper-scissor" />
+            </div>
+            <h4>Rock Paper Scissors game</h4>
+          </article>
+        </a>
+      </div>
+      <div class="project">
+        <a href="https://adinngo.github.io/simple-calculator/calculator.html" target="_blank">
+          <article>
+            <div class="image">
+              <img src="images/calculator.png" alt="calculator" />
+            </div>
+            <h4>Simple Calculator</h4>
+          </article>
+        </a>
+      </div>
+      <div class="project">
+        <a href="https://adinngo.github.io/simple-todolist/todolist.html" target="_blank">
+          <article>
+            <div class="image">
+              <img src="images/todolist.png" alt="calculator" />
+            </div>
+            <h4>Simple TodoList</h4>
+          </article>
+        </a>
+      </div>
     </main>
     <footer>
       <div class="reviews">
