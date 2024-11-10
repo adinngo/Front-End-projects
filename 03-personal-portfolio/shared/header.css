@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+  margin-bottom: 5rem;
 }
 
 .header__menu {
@@ -32,7 +32,7 @@
 
 .introduction {
   text-align: center;
-  margin-block-start: 5rem;
+  /* margin-block-start: 5rem; */
   /* margin-block-end: 8rem; */
 }
 
