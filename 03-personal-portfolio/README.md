@@ -6,5 +6,5 @@
   * Structure a website using HTML in a semantic way.
   * Structure in a way that you can easily add styles later.
   * Add SEO meta tags to the website.
-### link: https://adinngo.github.io/Front-End-projects/02-basic-html-website
+### link: https://adinngo.github.io/Front-End-projects/03-personal-portfolio
 ### Instruction: https://roadmap.sh/projects/basic-html-website
