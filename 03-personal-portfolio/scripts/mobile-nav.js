@@ -3,11 +3,18 @@ const mobileNav = document.querySelector(".mobile-nav");
 let isMobileNavOpen = false;
 navBtn.addEventListener("click", () => {
   if (isMobileNavOpen) {
+
     mobileNav.style.display = "none";
+
+    document.body.style.overflowY = "scroll";
+
     isMobileNavOpen = false;
   } else {
+
     mobileNav.style.display = "flex";
+
     document.body.style.overflowY = "hidden";
+
     isMobileNavOpen = true;
   }
 });
