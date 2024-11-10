@@ -1,0 +1,37 @@
+.mobile-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 70%;
+  height: 100%;
+  background-color: whitesmoke;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.mobile-nav__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-inline-start: 0;
+  list-style: none;
+ 
+}
+
+.mobile-nav__link {
+  font-size: var(--size-xl);
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  padding: 10px;
+  transition: all ease 0.3s;
+  border-radius: 6px;
+  transition: all ease 0.3s;
+}
+.mobile-nav__link:hover {
+  background-color: black;
+  color: whitesmoke;
+}

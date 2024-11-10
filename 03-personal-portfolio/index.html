@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="ThangNgo" />
+    <meta name="keywords" content="HTML, CSS, Basic Website, Web Development" />
+    <meta name="description" content="Basic HTML Website of ThangNgo, a Front-End Developer" />
+    <!-- font-family -->
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+    <!-- reset css -->
+    <link rel="stylesheet" href="shared/morden-normalize.css" />
+
+    <link rel="stylesheet" href="shared/styles.css" />
+    <link rel="stylesheet" href="shared/header.css" />
+    <link rel="stylesheet" href="shared/footer.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="shared/mobile-nav.css">
+    <title>Personal Portfolio</title>
+  </head>
+  <body>
+    <header class="header container">
+      <nav>
+        <h3>
+          <a href="index.html" class="header__logo"><em>ThangNgo</em></a>
+        </h3>
+        <ul class="header__menu">
+          <li><a href="index.html" class="header__link">Home</a></li>
+          <li><a href="projects.html" class="header__link">Projects</a></li>
+          <li><a href="articles.html" class="header__link">Articles</a></li>
+          <li><a href="contact.html" class="header__link">Contact</a></li>
+        </ul>
+        <button class="header__bars">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </nav>
+      <div class="introduction">
+        <h1 class="header__title">Font-End <br>Web Developer.</br></h1>
+        <p class="header__desc"><em>A passionate <b>Front-end/FullStack</b> Web Developer</em></p>
+      </div>
+    </header>
+    <!-- mobile navigation -->
+     <div class="mobile-nav">
+      <nav>
+        <ul class="mobile-nav__menu">
+          <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+          <li><a href="projects.html" class="mobile-nav__link">Projects</a></li>
+          <li><a href="articles.html" class="mobile-nav__link">Articles</a></li>
+          <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+        </ul>
+      </nav>
+     </div>
+     <!-- end of mobile navigation -->
+    <main class="main container">
+      <section class="main__left">
+        <h3 class="main__title">Projects</h3>
+        <ul>
+          <li>Rock Paper Scissors game</li>
+          <li>Calculator</li>
+          <li>Todo List</li>
+        </ul>
+      </section>
+
+      <section class="main__middle">
+        <h3 class="main__title">Work Experience</h3>
+        <article>
+          <h4 class="main__sub-title">roadmap.sh</h4>
+          <p>Solved all Frontend Projects</p>
+          <a href="https://github.com/adinngo/Front-End-projects" target="_blank">Visit Github</a>
+        </article>
+        <article>
+          <h4 main__sub-title>OpenSource Work</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem cum nulla fugiat esse ab eos dolore,
+            quaerat officia, temporibus sequi illo iusto consequatur, voluptatibus consequuntur voluptates? Libero porro
+            ex adipisci?
+          </p>
+          <a href="https://github.com/adinngo" target="_blank">Visit my Github Profile</a>
+        </article>
+      </section>
+
+      <section class="main__right">
+        <h3 class="main__title">Education</h3>
+        <p>Graduated with 3.76 out of 4 GPA. Won Acme Hackathon. Organized 30 sessions</p>
+        <article>
+          <h4 main__sub-title>Courses I took</h4>
+          <ul>
+            <li>Object Oriented Programming</li>
+            <li>Data Structures and Algorithms</li>
+            <li>Web Engineering</li>
+            <li>Data Management Systems</li>
+            <li>Human Computer Interaction</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+    <footer class="footer container">
+      <div class="reviews">
+        <h3 class="reviews-title">Review from my Teachers</h3>
+        <div>
+          <article>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur aspernatur ad dolorum, temporibus
+              fugiat eaque quos placeat! Fuga nam tempore blanditiis ullam quidem adipisci debitis, accusamus eos
+              maiores vel a!
+            </p>
+            <h4 class="reviews__author">Jane Dose</h4>
+            <p class="reviews__author-desc">Assistant Professor</p>
+          </article>
+          <article>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur aspernatur ad dolorum, temporibus
+              fugiat eaque quos placeat! Fuga nam tempore blanditiis ullam quidem adipisci debitis, accusamus eos
+              maiores vel a!
+            </p>
+            <h4 class="reviews__author">Jane Dose</h4>
+            <p class="reviews__author-desc">Assistant Professor</p>
+          </article>
+          <article>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur aspernatur ad dolorum, temporibus
+              fugiat eaque quos placeat! Fuga nam tempore blanditiis ullam quidem adipisci debitis, accusamus eos
+              maiores vel a!
+            </p>
+            <h4 class="reviews__author">Jane Dose</h4>
+            <p class="reviews__author-desc">Assistant Professor</p>
+          </article>
+        </div>
+      </div>
+      <p>&copy; All rights reserved 2025</p>
+    </footer>
+
+    <script src="scripts/mobile-nav.js"></script>
+  </body>
+</html>

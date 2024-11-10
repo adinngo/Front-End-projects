@@ -1,0 +1,85 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.btn {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 6px;
+  font-size: var(--size-xs);
+  text-align: center;
+  letter-spacing: -0.05em;
+  font-weight: 600;
+  transition: all ease 0.3s;
+}
+
+a {
+  color: inherit;
+}
+
+.fb {
+  background-color: #1877f2;
+  color: whitesmoke;
+}
+
+.ins {
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  color: whitesmoke;
+}
+.git {
+  background-color: black;
+  color: whitesmoke;
+}
+button:hover {
+  letter-spacing: 8px;
+}
+@media (min-width: 640px) {
+   .main {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  button {
+    font-size: var(--size-sm);
+  }
+}
+@media (min-width: 768px) {
+  .main {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  button {
+    font-size: var(--size-lg);
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+  button {
+    font-size: var(--size-2xl);
+  }
+}
+/* xl */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+  button {
+    font-size: var(--size-2xl);
+  }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+  button {
+    font-size: var(--size-4xl);
+  }
+}

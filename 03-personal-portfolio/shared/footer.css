@@ -1,0 +1,30 @@
+/* footer */
+.footer > p {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+
+.reviews div article {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px 0 60px 0;
+}
+.reviews div article .reviews__author-desc {
+  color: darkgray;
+}
+
+@media (min-width: 1024px) {
+  .reviews div {
+   display: flex;
+   gap: 1rem;
+  }
+  .reviews-title {
+    font-size: var(--size-2xl);
+  }
+  .reviews__author {
+    font-size: var(--size-lg);
+  }
+
+}

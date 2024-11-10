@@ -1,0 +1,30 @@
+.main > p {
+  font-size: var(--size-sm);
+  color: darkgrey;
+}
+
+@media (min-width: 768px) {
+  .main > p {
+    font-size: var(--size-xl);
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .main > p {
+    font-size: var(--size-2xl);
+  }
+}
+/* xl */
+@media (min-width: 1280px) {
+  .main > p {
+    font-size: var(--size-4xl);
+  }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+  .main > p {
+    font-size: var(--size-6xl);
+  }
+}
