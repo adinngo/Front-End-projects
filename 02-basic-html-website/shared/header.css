@@ -22,7 +22,7 @@ header nav {
   margin-bottom: 100px;
 }
 header nav .logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: black;
   font-weight: lighter;
   margin-bottom: 30px;
@@ -36,11 +36,12 @@ nav ul li {
   display: inline-block;
   margin-right: 20px;
   padding: 10px;
-  font-weight: bold;
   transition: all ease 0.3s;
 }
 nav ul li a {
   color: inherit;
+  font-weight: bold;
+  font-size: 2rem;
 }
 nav ul li:hover {
   border-bottom: 2px solid black;
@@ -50,7 +51,7 @@ header > div {
   margin: 170px 0 140px 0;
 }
 header h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   margin: 40px 0;
 }
 header p {
