@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="shared/morden-normalize.css">
+    <link rel="stylesheet" href="shared/morden-normalize.css" />
     <link rel="stylesheet" href="shared/styles.css" />
     <link rel="stylesheet" href="shared/header.css" />
     <link rel="stylesheet" href="shared/footer.css" />
     <link rel="stylesheet" href="styles/articles.css" />
-    <link rel="stylesheet" href="shared/mobile-nav.css">
+    <link rel="stylesheet" href="shared/mobile-nav.css" />
 
     <!-- font-family -->
     <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
     <title>Articles</title>
   </head>
   <body>
-     <header class="header container">
+    <header class="header container">
       <nav>
         <h3>
           <a href="index.html" class="header__logo"><em>ThangNgo</em></a>
@@ -33,33 +33,47 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-          
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </button>
+        
+        <button class="header__close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
       </nav>
       <div class="introduction">
-        <h1 class="header__title">Font-End <br>Web Developer.</br></h1>
-        <p class="header__desc"><em>A passionate <b>Front-end/FullStack</b> Web Developer</em></p>
+        <h1 class="header__title">Font-End <br />Web Developer.</h1>
+        <p class="header__desc">
+          <em>A passionate <b>Front-end/FullStack</b> Web Developer</em>
+        </p>
       </div>
     </header>
     <!-- mobile navigation -->
     <div class="mobile-nav">
-    <nav>
-      <ul class="mobile-nav__menu">
-        <li><a href="index.html" class="mobile-nav__link">Home</a></li>
-        <li><a href="projects.html" class="mobile-nav__link">Projects</a></li>
-        <li><a href="articles.html" class="mobile-nav__link">Articles</a></li>
-        <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <ul class="mobile-nav__menu">
+          <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+          <li><a href="projects.html" class="mobile-nav__link">Projects</a></li>
+          <li><a href="articles.html" class="mobile-nav__link">Articles</a></li>
+          <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+        </ul>
+      </nav>
     </div>
     <!-- end of mobile navigation -->
     <main class="main container">
       <p>There's no articles now.</p>
     </main>
-     
+
     <footer class="footer container">
       <div class="reviews">
         <h3 class="reviews-title">Review from my Teachers</h3>
@@ -97,6 +111,5 @@
     </footer>
 
     <script src="scripts/mobile-nav.js"></script>
-
   </body>
 </html>

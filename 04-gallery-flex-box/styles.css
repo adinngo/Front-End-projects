@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f5f6f7;
+
+  margin: 0;
+}
+.header {
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #0a0a23;
+  color: #fff;
+  padding: 1em;
+  border-bottom: 4px solid #fdb347;
+}
+.gallery {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.gallery::after {
+  content: "";
+  width: 350px;
+}
+/* .gallery img {
+  max-width: 350px;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  /* border-radius: 10px; */
+/* } */
+.gallery a {
+  background-image: url("https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg");
+  background-size: 350px 300px;
+  width: 350px;
+  height: 300px;
+  display: block;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.3s;
+  text-decoration: none;
+  color: inherit;
+  cursor: context-menu;
+  
+}
+
+
+button {
+  background-image: linear-gradient(to right, #eecda3 0%, #ef629f 51%, #eecda3 100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all ease 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  border: none;
+}
+button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}

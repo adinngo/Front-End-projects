@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="shared/header.css" />
     <link rel="stylesheet" href="shared/footer.css" />
     <link rel="stylesheet" href="styles/index.css" />
-    <link rel="stylesheet" href="shared/mobile-nav.css">
+    <link rel="stylesheet" href="shared/mobile-nav.css" />
     <title>Personal Portfolio</title>
   </head>
   <body>
@@ -37,19 +37,33 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-          
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </button>
+        
+        <button class="header__close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
       </nav>
       <div class="introduction">
-        <h1 class="header__title">Font-End <br>Web Developer.</br></h1>
-        <p class="header__desc"><em>A passionate <b>Front-end/FullStack</b> Web Developer</em></p>
+        <h1 class="header__title">Font-End <br />Web Developer.</h1>
+        <p class="header__desc">
+          <em>A passionate <b>Front-end/FullStack</b> Web Developer</em>
+        </p>
       </div>
     </header>
     <!-- mobile navigation -->
-     <div class="mobile-nav">
+    <div class="mobile-nav">
       <nav>
         <ul class="mobile-nav__menu">
           <li><a href="index.html" class="mobile-nav__link">Home</a></li>
@@ -58,8 +72,8 @@
           <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
         </ul>
       </nav>
-     </div>
-     <!-- end of mobile navigation -->
+    </div>
+    <!-- end of mobile navigation -->
     <main class="main container">
       <section class="main__left">
         <h3 class="main__title">Projects</h3>

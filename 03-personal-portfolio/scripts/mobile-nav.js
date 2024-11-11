@@ -1,20 +1,27 @@
-const navBtn = document.querySelector(".header__bars ");
+const openNavBtn = document.querySelector(".header__bars ");
+const closeNavBtn = document.querySelector(".header__close ");
 const mobileNav = document.querySelector(".mobile-nav");
 let isMobileNavOpen = false;
-navBtn.addEventListener("click", () => {
-  if (isMobileNavOpen) {
+openNavBtn.addEventListener("click", () => {
+  openNavBtn.style.display = "none";
 
-    mobileNav.style.display = "none";
+  closeNavBtn.style.display = "block";
 
-    document.body.style.overflowY = "scroll";
+  mobileNav.style.display = "flex";
 
-    isMobileNavOpen = false;
-  } else {
+  document.body.style.overflowY = "hidden";
 
-    mobileNav.style.display = "flex";
+  isMobileNavOpen = false;
+});
+closeNavBtn.addEventListener("click", () => {
 
-    document.body.style.overflowY = "hidden";
+  openNavBtn.style.display = "block";
 
-    isMobileNavOpen = true;
-  }
+  closeNavBtn.style.display = "none";
+
+  mobileNav.style.display = "none";
+
+  document.body.style.overflowY = "scroll";
+
+  isMobileNavOpen = true;
 });
