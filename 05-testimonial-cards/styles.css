@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
+}
+body {
+  font-family: sans-serif, 'Times New Roman', Times, serif;
+  background-color: #f5f6f7 ;
+}
+.header {
+  font-size: 2rem;
+  padding: 1em;
+  background-color: #0a0a23;
+  color: #fff;
+  border-bottom: 5px solid #fdb347;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 100px;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 2px solid red;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card-02, .card-01 {
+  max-width: 450px;
+  width: 100%;
+  padding: 20px 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+.user {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.user__desc {
+  font-size: 0.7em;
+  color: gray;
+}
+.card-02 img, .card-01 img {
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid lightgray;
+  padding: 5px;
+  
+}
+.card-01 > .wrapper {
+  position: relative;
+
+}
+
+.wrapper > .introduction {
+  position: absolute;
+  width: 400px;
+  line-height: 1.2;
+  top: -10px;
+  left: calc(50%-210px);
+  border-radius: 20px;
+  background-color: #1E1E1E;
+  color: #fff;
+  padding: 20px;
+  
+
+}
+.wrapper > .introduction::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 11%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.wrapper > .user {
+  position: absolute;
+  top: 135px;
+}
