@@ -120,11 +120,20 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 50px 100px;
+  border: 2px solid gray;
+  border-radius: 20px;
+  margin-bottom: 100px;
 }
 
 .card-03__introduction {
   text-align: center;
   margin-bottom: 70px;
+}
+.card-03__scroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .card-03__user-images img {
@@ -133,22 +142,18 @@ body {
   border: 1px solid lightgray;
   padding: 5px;
 }
-.card-03__user-images {
-  .img-01, .img-03 {
-    opacity: 0.5;
-  }
+.card-03__user-images img:nth-child(odd) {
+  opacity: 0.4;
 }
 
-.card-03__scroll {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
+
 .card-03__user-name {
   text-align: center;
+  font-size: 0.7rem;
 }
 .btn {
   background-color: transparent;
+  cursor: pointer;
   border: none;
 }
 .btn > i {
