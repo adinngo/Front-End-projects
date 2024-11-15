@@ -129,6 +129,7 @@ button {
   font-size: 1.438rem;
   background: #d0d0d5;
   border: 3px solid #3b3b4f;
+  cursor: pointer;
   border-radius: 8px;
 }
 
