@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f5f6f7;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+header {
+  padding: 6rem;
+  text-align: center;
+  background-color: #0a0a23;
+  color: #f5f6f7;
+  margin-bottom: 7rem;
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 1.2;
+}
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2.5rem;
+}
+ul li {
+  list-style: none;
+  position: relative;
+}
+ul a {
+  color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+ul a:hover {
+  color: #007bff;
+}
+
+.tooltip {
+  text-align: center;
+  width: 200px;
+  position: absolute;
+  bottom: 130%; /* Position above the link */
+  left: calc(50% - 100px);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding-block: 10px;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  visibility: hidden; /* Hidden by default */
+  transition: all ease 0.3s;
+  z-index: 10;
+}
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  /*  trừ một nửa border width 10px / 2 = 5px */
+  left: calc(50% - 5px); 
+  border-width: 10px;
+  border-color: rgba(0, 0, 0, 0.6) transparent transparent transparent;
+  border-style: solid;
+}
+
+ul li:hover .tooltip {
+  visibility: visible; /* Show tooltip on hover */
+}
