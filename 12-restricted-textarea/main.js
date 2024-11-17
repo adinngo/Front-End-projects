@@ -5,7 +5,7 @@ let cnt = 0;
 
 userMessage.addEventListener("input", () => {
   cnt = userMessage.value.length;
-  if( cnt > 255) {
+  if (cnt > 255) {
     userMessage.style.border = "none";
     userMessage.style.outline = "2px solid red";
     userMessage.style.color = "red";
@@ -17,4 +17,6 @@ userMessage.addEventListener("input", () => {
     document.querySelector(".length-message").style.color = "black";
     countText.textContent = cnt;
   }
-})
+});
+
+userMessage.addEventListener()
