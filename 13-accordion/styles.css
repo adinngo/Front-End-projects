@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding-block: 5rem;
+}
+
+.container {
+  text-align: center;
+  max-width: 1000px;
+  width: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container > p {
+  margin: 0.5rem 0 2rem 0;
+  color: gray;
+
+}
+.accordions-list {
+  list-style: none;
+}
+.accordion {
+  margin-bottom: 1rem;
+  border: 2px solid black;
+  border-radius: 8px;
+  overflow: hidden;
+
+}
+.accordion-header {
+  padding: 1rem;
+  display: flex;
+  color: #f5f6f7;
+  border: none;
+  background-color: #0a0a23;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion-header  p{
+  font-weight: 500;
+}
+.accordion-content {
+  border-radius: 8px;
+  line-height: 1.5;
+  max-height: 0;
+  /* overflow: hidden; */
+  transition: max-height 0.3s ease-out;
+}
+.accordion-content p {
+  text-align: justify;
+  padding: 20px;
+  margin-block: 0;
+  border-radius: 8px;
+}
+.open-answer {
+  border: none;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.open-answer:hover {
+  opacity: 0.8;
+}
+
+.accordion.active .open-answer i {
+  transform: rotate(-180deg);
+}
+
+@media screen and (min-width: 425px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  .container > p, .accordion-header  p, .accordion-content p {
+    font-size: 0.7em;
+  }
+  
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  .container > p, .accordion-header  p, .accordion-content p {
+    font-size: 1em;
+  }
+  
+}
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 3em;
+  }
+  .container > p, .accordion-header  p{
+    font-size: 1.5em;
+  }
+  
+}
