@@ -100,8 +100,10 @@ body {
   h1 {
     font-size: 3em;
   }
-  .container > p, .accordion-header  p{
+  .container > p{
     font-size: 1.5em;
   }
-  
+  .accordion-header  p, .accordion-content p{
+    font-size: 1.2em;
+  Ư
 }
