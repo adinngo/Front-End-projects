@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 50%;
+}
+body {
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.age-calculator {
+  max-width: 600px;
+  width: 90%;
+  padding: 1em 2em;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  font-size: 4em;
+  margin-bottom: 1.5em;
+}
+label {
+  display: block;
+  font-size: 2em;
+  font-weight: 500;
+  cursor: pointer;
+}
+.date-input {
+  width: 70%;
+  padding: 0.5rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1.5em;
+  display: block;
+  outline: none;
+  cursor: pointer;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  transition: all ease 0.3s;
+}
+.date-input:hover {
+  border-color: #3498db;
+}
+.date-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.btn-grad {
+  background-image: linear-gradient(to right, #77a1d3 0%, #79cbca 51%, #77a1d3 100%);
+  margin: 1rem 0 2rem 0;
+  padding: 1.5rem 4.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  width: 100%;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  border: none;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.result {
+  font-size: 2em;
+  text-align: center;
+}
+.error {
+  color: red;
+  font-weight: bold;
+}
