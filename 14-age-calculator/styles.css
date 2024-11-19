@@ -24,12 +24,12 @@ body {
 }
 h1 {
   text-align: center;
-  font-size: 4em;
+  font-size: 3em;
   margin-bottom: 1.5em;
 }
 label {
   display: block;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 500;
   cursor: pointer;
 }
@@ -56,8 +56,9 @@ label {
 
 .btn-grad {
   background-image: linear-gradient(to right, #77a1d3 0%, #79cbca 51%, #77a1d3 100%);
+  font-size: 1em;
   margin: 1rem 0 2rem 0;
-  padding: 1.5rem 4.5rem;
+  padding: 1em 3em;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -72,17 +73,32 @@ label {
   transition: all ease-in-out 0.3s;
 }
 
-
 .btn-grad:hover {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
 .result {
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
 }
 .error {
   color: red;
   font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 4em;
+  }
+  label {
+    font-size: 2em;
+  }
+  .btn-grad {
+    font-size: 1.7em;
+  }
+  .result {
+    font-size: 2em;
+    
+  }
 }
