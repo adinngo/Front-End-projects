@@ -43,6 +43,8 @@ const currentPage = document.querySelector(".current-page");
 let index = 0;
 
 function LoadPage() {
+  //display show answer btn
+  displayShowAnswerBtn();
   //display current percent
   const currentPercent = getCurrentPercent();
 
@@ -77,8 +79,7 @@ function LoadPage() {
   //turn off overflow when click next or previous
   document.querySelector(".card-container").style.overflow = "hidden";
 
-  showAnswer.style.display = "block";
-  hideAnswer.style.display = "none";
+  
 }
 
 // Attach event listeners once
@@ -93,10 +94,11 @@ showAnswer.addEventListener("click", () => {
 hideAnswer.addEventListener("click", () => {
   document.querySelector(".card-container").style.overflow = "hidden";
 
-  showAnswer.style.display = "block";
-  hideAnswer.style.display = "none";
+  
 
   document.querySelector(".answer-card").classList.toggle("appearance-answer");
+
+  
 });
 
 prevCard.addEventListener("click", () => {
@@ -130,4 +132,9 @@ function generateCurrentPercent() {
 }
 function generateCurrentState() {
   document.querySelector(".current-state").style.width = `${getCurrentPercent()}%`;
+}
+function displayShowAnswerBtn() {
+  showAnswer.style.display = "block";
+  hideAnswer.style.display = "none";
+ 
 }
