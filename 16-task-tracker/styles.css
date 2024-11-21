@@ -54,7 +54,7 @@ body {
   grid-template-columns: 1fr auto auto;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 .todo-content-container {
   font-size: 1.5rem;
@@ -125,6 +125,9 @@ body {
   .todoList-input-wrapper {
     padding: 1rem 0.5rem 1rem 1.5rem;
     border-radius: 2rem;
+  }
+  .todoList-item {
+    margin-bottom: 4rem;
   }
   .todo-input {
     font-size: 2rem;
