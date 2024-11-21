@@ -54,28 +54,23 @@ function renderTodoList() {
   });
   document.querySelector(".todoList").innerHTML = todoListHtml;
 
-  document.querySelector(".add-btn").addEventListener("click", () => {
-    const todoInput = document.querySelector(".todo-input");
-    todoList.push({
-      todo: todoInput.value,
-      status: false,
-    });
-    saveToLocalStorage();
-    renderTodoList();
-  });
+  
 
   document.querySelectorAll(".todoList-item").forEach((todoItem, index) => {
     const finishTask = todoItem.querySelector(".todo-status");
     const editBtn = todoItem.querySelector(".edit-btn");
     const removeBtn = todoItem.querySelector(".remove-btn");
     const saveBtn = todoItem.querySelector(".save-btn");
+
+
+
+
     finishTask.addEventListener("click", () => {
       // Toggle the finished state
       todoList[index].status.finished = !todoList[index].status.finished;
       saveToLocalStorage();
       renderTodoList();
     });
-
 
     removeBtn.addEventListener("click", () => {
       todoList.splice(index, 1); // remove from list
@@ -100,3 +95,12 @@ function renderTodoList() {
 function saveToLocalStorage() {
   localStorage.setItem("todoList", JSON.stringify(todoList));
 }
+document.querySelector(".add-btn").addEventListener("click", () => {
+  const todoInput = document.querySelector(".todo-input");
+  todoList.push({
+    todo: todoInput.value,
+    status: false,
+  });
+  saveToLocalStorage();
+  renderTodoList();
+});
