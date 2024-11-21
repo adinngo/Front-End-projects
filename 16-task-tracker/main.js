@@ -30,22 +30,37 @@ const todoList = [
     },
   },
 ];
-let todoListHtml = "";
-todoList.forEach((item, index) => {
-  todoListHtml += `
-    <div class="todoList-item">
-      <label for="todo-status-${index}" class="todo-content-container">
-        <input type="checkbox" id="todo-status-${index}" class="todo-status" />
-        <span class="todo-content">${item.todo}</span>
-      </label>
-      <div class="todo-content-edited-container">
-        <input type="text" class="input-todo-edited">
-        <button class="save-btn"><i class='bx bxs-save' ></i></button>
+renderTodoList();
+function renderTodoList() {
+  let todoListHtml = "";
+ 
+  todoList.forEach((item, index) => {
+    todoListHtml += `
+      <div class="todoList-item">
+        <label for="todo-status-${index}" class="todo-content-container">
+          <input type="checkbox" id="todo-status-${index}" class="todo-status" />
+          <span class="todo-content">${item.todo}</span>
+        </label>
+        <div class="todo-content-edited-container">
+          <input type="text" class="input-todo-edited">
+          <button class="save-btn"><i class='bx bxs-save' ></i></button>
+        </div>
+        <button class="edit-btn"><i class='bx bx-edit'></i></button>
+        <button class="remove-btn"><i class="bx bx-trash"></i></button>
       </div>
-      <button class="edit-btn"><i class='bx bx-edit'></i></button>
-      <button class="remove-btn"><i class="bx bx-trash"></i></button>
-    </div>
-  
-  `;
-});
-document.querySelector(".todoList").innerHTML = todoListHtml;
+    
+    `;
+  });
+  document.querySelector(".todoList").innerHTML = todoListHtml;
+
+  document.querySelector(".add-btn").addEventListener("click", () => {
+    const todoInput = document.querySelector(".todo-input");
+    todoList.push({
+      todo: todoInput.value,
+      status: true,
+    });
+    
+    renderTodoList();
+  });
+}
+
