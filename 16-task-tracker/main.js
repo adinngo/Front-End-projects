@@ -68,7 +68,7 @@ function renderTodoList() {
     const finishTask = todoItem.querySelector(".todo-status");
     const editBtn = todoItem.querySelector(".edit-btn");
     const removeBtn = todoItem.querySelector(".remove-btn");
-
+    const saveBtn = todoItem.querySelector(".save-btn");
     finishTask.addEventListener("click", () => {
       // Toggle the finished state
       todoList[index].status.finished = !todoList[index].status.finished;
@@ -83,6 +83,13 @@ function renderTodoList() {
 
     editBtn.addEventListener("click", () => {
       todoItem.classList.add("is-editing-todo-content");
+      todoItem.querySelector(".todo-input-edited").value = todoList[index].todo;
+    });
+
+    saveBtn.addEventListener("click", () => {
+      todoList[index].todo = todoItem.querySelector(".todo-input-edited").value;
+        todoItem.classList.remove("is-editing-todo-content");
+      renderTodoList();
     });
 
   });
