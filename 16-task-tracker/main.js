@@ -1,4 +1,4 @@
-const todoList = [
+const todoList = JSON.parse(localStorage.getItem("todoList")) ||[
   {
     todo: "New task is created and added to the list",
     status: {
@@ -58,9 +58,9 @@ function renderTodoList() {
     const todoInput = document.querySelector(".todo-input");
     todoList.push({
       todo: todoInput.value,
-      status: true,
+      status: false,
     });
-
+    saveToLocalStorage();
     renderTodoList();
   });
 
@@ -72,12 +72,14 @@ function renderTodoList() {
     finishTask.addEventListener("click", () => {
       // Toggle the finished state
       todoList[index].status.finished = !todoList[index].status.finished;
+      saveToLocalStorage();
       renderTodoList();
     });
 
 
     removeBtn.addEventListener("click", () => {
       todoList.splice(index, 1); // remove from list
+      saveToLocalStorage();
       renderTodoList();
     });
 
@@ -88,9 +90,13 @@ function renderTodoList() {
 
     saveBtn.addEventListener("click", () => {
       todoList[index].todo = todoItem.querySelector(".todo-input-edited").value;
-        todoItem.classList.remove("is-editing-todo-content");
+      todoItem.classList.remove("is-editing-todo-content");
+      saveToLocalStorage();
       renderTodoList();
     });
 
   });
+}
+function saveToLocalStorage() {
+  localStorage.setItem("todoList", JSON.stringify(todoList));
 }

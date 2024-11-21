@@ -107,6 +107,9 @@ body {
   .todo-content-container {
     display: none;
   }
+  .edit-btn, .remove-btn {
+    display: none;
+  }
 }
 .finished {
   text-decoration: line-through;
