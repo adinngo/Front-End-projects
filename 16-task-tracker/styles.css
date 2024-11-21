@@ -31,19 +31,21 @@ body {
   border: 2px solid black;
   border-radius: 1rem;
 }
-.todo-input,
-.add-btn {
+.todo-input {
   font-size: 1rem;
   border: none;
   background-color: transparent;
   outline: none;
 }
 .add-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
   cursor: pointer;
   transition: all ease 0.3s;
 }
 .add-btn:hover {
-  box-shadow: inset 0 -2px 0 0 black;
+  opacity: 0.5;
 }
 .todoList-item {
   width: 100%;
@@ -107,7 +109,8 @@ body {
   .todo-content-container {
     display: none;
   }
-  .edit-btn, .remove-btn {
+  .edit-btn,
+  .remove-btn {
     display: none;
   }
 }
@@ -120,12 +123,14 @@ body {
     font-size: 3rem;
   }
   .todoList-input-wrapper {
-    padding: 2rem 0.5rem 2rem 1.5rem;
+    padding: 1rem 0.5rem 1rem 1.5rem;
     border-radius: 2rem;
   }
-  .todo-input,
-  .add-btn {
+  .todo-input {
     font-size: 2rem;
+  }
+  .add-btn {
+    font-size: 4rem;
   }
   .todo-content-container {
     font-size: 2rem;
