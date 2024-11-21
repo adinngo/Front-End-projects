@@ -10,27 +10,75 @@
     <title>Task Tracker</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Task Tracker</h1>
-      <div class="todoList-input-wrapper">
-        <input type="text" class="todo-input" />
-        <button class="add-btn"><i class='bx bx-plus'></i></button>
+    <header>
+      <h1>TRY TO BE USEFUL EVERYDAY</h1>
+    </header>
+    <main>
+      <div class="todoLists-input-wrapper">
+        <input type="text" class="TodoList-input" />
+        <button class="create-todoList-btn">Create</button>
       </div>
-      <div class="todoList">
-        <!-- <div class="todoList-item">
-          <label for="todo-status" class="todo-content-container">
-            <input type="checkbox" id="todo-status" class="todo-status" />
-            <span class="checkmark"></span>
-            <span class="todo-content">New task is created and added to the list.</span>
-          </label>
-          <div class="todo-content-edited-container">
-            <input type="text" class="todo-input-edited">
-            <button class="save-btn"><i class='bx bxs-save' ></i></button>
+
+      <!--list of todoList -->
+      <div class="todoLists-container">
+        <div class="todoList-container">
+          <!-- title of todoList -->
+          <div class="header-todoList">
+            <h2 class="title-todoList">Task Tracker</h2>
+            <span class="date"></span>
           </div>
-          <button class="edit-btn"><i class='bx bx-edit'></i></button>
-          <button class="remove-btn"><i class="bx bx-trash"></i></button>
-        </div> -->
+
+          <!-- content of todoList -->
+          <div class="todoList-input-wrapper">
+            <input type="text" class="todo-input" />
+            <button class="add-btn"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="todoList">
+            <!-- <div class="todoList-item">
+              <label for="todo-status" class="todo-content-container">
+                <input type="checkbox" id="todo-status" class="todo-status" />
+                <span class="checkmark"></span>
+                <span class="todo-content">New task is created and added to the list.</span>
+              </label>
+              <div class="todo-content-edited-container">
+                <input type="text" class="todo-input-edited">
+                <button class="save-btn"><i class='bx bxs-save' ></i></button>
+              </div>
+              <button class="edit-btn"><i class='bx bx-edit'></i></button>
+              <button class="remove-btn"><i class="bx bx-trash"></i></button>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="todoList-container">
+          <div class="header-todoList">
+            <h2 class="title-todoList">Task Tracker</h2>
+            <span class="date"></span>
+          </div>
+
+          <div class="todoList-input-wrapper">
+            <input type="text" class="todo-input" />
+            <button class="add-btn"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="todoList">
+            <!-- <div class="todoList-item">
+              <label for="todo-status" class="todo-content-container">
+                <input type="checkbox" id="todo-status" class="todo-status" />
+                <span class="checkmark"></span>
+                <span class="todo-content">New task is created and added to the list.</span>
+              </label>
+              <div class="todo-content-edited-container">
+                <input type="text" class="todo-input-edited">
+                <button class="save-btn"><i class='bx bxs-save' ></i></button>
+              </div>
+              <button class="edit-btn"><i class='bx bx-edit'></i></button>
+              <button class="remove-btn"><i class="bx bx-trash"></i></button>
+            </div> -->
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

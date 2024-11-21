@@ -1,4 +1,4 @@
-const todoList = JSON.parse(localStorage.getItem("todoList")) ||[
+const todoListItem = JSON.parse(localStorage.getItem("todoListItem")) || [
   {
     todo: "New task is created and added to the list",
     status: {
@@ -30,11 +30,61 @@ const todoList = JSON.parse(localStorage.getItem("todoList")) ||[
     },
   },
 ];
-renderTodoList();
+const todoLists = [
+  {
+    todoListTitle: "Task Tracker",
+    content: todoListItem,
+  },
+
+  {
+    todoListTitle: "Do Workout",
+    content: todoListItem,
+  },
+];
+
+// format date and time
+const now = new Date();
+
+const fullDateTime = `${now.getDate()}/${
+  now.getMonth() + 1
+}/${now.getFullYear()} - ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+console.log("Current Date and Time:", fullDateTime); // e.g., "21/11/2024 14:45:30"
+
+renderTodoLists();
+
+function renderTodoLists() {
+  let todoListsHtml = "";
+  todoLists.forEach((todoList) => {
+    todoListsHtml += `
+    <div class="todoList-container">
+          <!-- title of todoList -->
+          <div class="header-todoList">
+            <h2 class="title-todoList">${todoList.todoListTitle}</h2>
+            <span class="date">${fullDateTime}</span>
+          </div>
+
+          <!-- input todo of todoList -->
+          <div class="todoList-input-wrapper">
+            <input type="text" class="todo-input" />
+            <button class="add-btn"><i class="bx bx-plus"></i></button>
+          </div>
+
+           <!-- content of todoList -->
+          <div class="todoList">
+            ${renderTodoList()}
+          </div>
+    </div>
+  `;
+  });
+
+  document.querySelector(".todoLists-container").innerHTML = todoListsHtml;
+}
+
+document.querySelectorAll(".todoList-container").forEach((item) => {});
 function renderTodoList() {
   let todoListHtml = "";
 
-  todoList.forEach((item, index) => {
+  todoListItem.forEach((item, index) => {
     const isFinished = item.status.finished;
     todoListHtml += `
       <div class="todoList-item">
@@ -52,55 +102,11 @@ function renderTodoList() {
     
     `;
   });
-  document.querySelector(".todoList").innerHTML = todoListHtml;
-
-  
-
-  document.querySelectorAll(".todoList-item").forEach((todoItem, index) => {
-    const finishTask = todoItem.querySelector(".todo-status");
-    const editBtn = todoItem.querySelector(".edit-btn");
-    const removeBtn = todoItem.querySelector(".remove-btn");
-    const saveBtn = todoItem.querySelector(".save-btn");
-
-
-
-
-    finishTask.addEventListener("click", () => {
-      // Toggle the finished state
-      todoList[index].status.finished = !todoList[index].status.finished;
-      saveToLocalStorage();
-      renderTodoList();
-    });
-
-    removeBtn.addEventListener("click", () => {
-      todoList.splice(index, 1); // remove from list
-      saveToLocalStorage();
-      renderTodoList();
-    });
-
-    editBtn.addEventListener("click", () => {
-      todoItem.classList.add("is-editing-todo-content");
-      todoItem.querySelector(".todo-input-edited").value = todoList[index].todo;
-    });
-
-    saveBtn.addEventListener("click", () => {
-      todoList[index].todo = todoItem.querySelector(".todo-input-edited").value;
-      todoItem.classList.remove("is-editing-todo-content");
-      saveToLocalStorage();
-      renderTodoList();
-    });
-
-  });
+  return todoListHtml;
 }
-function saveToLocalStorage() {
-  localStorage.setItem("todoList", JSON.stringify(todoList));
-}
-document.querySelector(".add-btn").addEventListener("click", () => {
-  const todoInput = document.querySelector(".todo-input");
-  todoList.push({
-    todo: todoInput.value,
-    status: false,
-  });
-  saveToLocalStorage();
-  renderTodoList();
+
+document.querySelector(".create-todoList-btn").addEventListener("click", () => {
+  const todoListTitle = document.querySelector(".TodoList-input").value;
+  todoLists.push({ todoListTitle, content: [] });
+  renderTodoLists();
 });

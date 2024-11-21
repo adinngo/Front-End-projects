@@ -10,18 +10,78 @@ html {
 }
 body {
   font-family: "Edu AU VIC WA NT Pre", cursive;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
-.container {
-  max-width: 678px;
+main {
+  padding: 1rem 2rem;
+}
+header {
+  padding: 2rem;
+  background-color: #0a0a23;
+  color: #f5f6f7;
+  text-align: center;
+  margin-bottom: 1rem;
+  
+}
+h1 {
+  font-size: 4rem;
+  word-spacing: 0.5em;
+}
+.todoLists-input-wrapper {
+  border: 2px solid #0a0a23;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+}
+
+.TodoList-input {
+  font-size: 2rem;
+  outline: none;
+  border: none;
   width: 90%;
+}
+.create-todoList-btn {
+  font-size: 2rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.todoLists-container {
+  max-width: 1400px;
+  width: 90%;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+}
+
+
+/* item*/
+
+.todoList-container {
+  max-width: 400px;
+  width: 100%;
   padding: 1rem 2rem;
   border-radius: 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
+.header-todoList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.date {
+  color: gray;
+  font-weight: bold;
+}
 .todoList-input-wrapper {
   margin-block: 1rem 3rem;
   padding: 1em 0.5em;
@@ -118,8 +178,9 @@ body {
   text-decoration: line-through;
 }
 
-@media screen and (min-width: 768px) {
-  h1 {
+ @media screen and (min-width: 768px) {
+
+  /* h1 {
     font-size: 3rem;
   }
   .todoList-input-wrapper {
@@ -152,5 +213,9 @@ body {
   }
   .todo-content-edited-container {
     border-radius: 1rem;
+  } */
+
+  .todoLists-input-wrapper {
+    width: 40%;
   }
-}
+} 
