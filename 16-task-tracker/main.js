@@ -30,7 +30,7 @@
 //     },
 //   },
 // ];
-const now =   new Date();
+const now = new Date();
 const fullDateTime = `${now.getDate()}/${
   now.getMonth() + 1
 }/${now.getFullYear()} - ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
@@ -115,7 +115,6 @@ const todoLists = JSON.parse(localStorage.getItem("todoLists")) || [
 
 // format date and time
 
-
 renderTodoLists();
 
 function renderTodoLists() {
@@ -151,7 +150,6 @@ function renderTodoLists() {
   document.querySelector(".todoLists-container").innerHTML = todoListsHtml;
 
   document.querySelectorAll(".todoList-container").forEach((item, index) => {
-
     // create todoList
     item.querySelector(".add-btn").addEventListener("click", () => {
       const todoInput = item.querySelector(".todo-input").value;
@@ -230,6 +228,15 @@ function renderTodoList(content, index) {
 }
 
 document.querySelector(".create-todoList-btn").addEventListener("click", () => {
+  createTodoList();
+});
+document.querySelector(".TodoList-input").addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    createTodoList();
+  }
+});
+
+function createTodoList() {
   const todoListTitle = document.querySelector(".TodoList-input");
   const error = document.querySelector(".error");
   if (!todoListTitle.value) {
@@ -237,18 +244,16 @@ document.querySelector(".create-todoList-btn").addEventListener("click", () => {
     return;
   }
 
-  todoLists.push(
-    { 
-    todoListTitle: todoListTitle.value, 
+  todoLists.push({
+    todoListTitle: todoListTitle.value,
     dateTime: fullDateTime,
-    content: [] 
-    }
-  );
+    content: [],
+  });
   todoListTitle.value = "";
   error.innerHTML = "";
   saveToLocalStorage();
   renderTodoLists();
-});
+}
 
 
 function saveToLocalStorage() {
