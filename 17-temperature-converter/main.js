@@ -9,12 +9,10 @@ checkFilled();
 function checkFilled() {
   if (!fromUnits.value || !toUnits.value || !valueInput.value || !Number(valueInput.value)) {
     submit.disabled = true;
-    submit.style.opacity = 0.2;
-    submit.style.cursor = "initial";
+
   } else {
     submit.disabled = false;
-    submit.style.opacity = 1;
-    submit.style.cursor = "pointer";
+ 
   }
 }
 fromUnits.addEventListener("input", checkFilled);

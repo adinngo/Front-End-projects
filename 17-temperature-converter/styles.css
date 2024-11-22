@@ -61,6 +61,11 @@ p {
   height: 4rem;
 }
 
+.submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+
 @media screen and (min-width: 425px) {
   .action {
     justify-content: space-between;
