@@ -1,36 +1,36 @@
-const todoListItem = JSON.parse(localStorage.getItem("todoListItem")) || [
-  {
-    todo: "New task is created and added to the list",
-    status: {
-      finished: false,
-    },
-  },
-  {
-    todo: "Clicking the checkbox toggles the completeness",
-    status: {
-      finished: false,
-    },
-  },
-  {
-    todo: "Delete button will delete the task from the list",
-    status: {
-      finished: false,
-    },
-  },
-  {
-    todo: "Complete tasks show at the end with strikethrough",
-    status: {
-      finished: false,
-    },
-  },
-  {
-    todo: "Marking in complete will put it back in pending list",
-    status: {
-      finished: false,
-    },
-  },
-];
-const todoLists = [
+// const todoListItem = JSON.parse(localStorage.getItem("todoListItem")) || [
+//   {
+//     todo: "New task is created and added to the list",
+//     status: {
+//       finished: false,
+//     },
+//   },
+//   {
+//     todo: "Clicking the checkbox toggles the completeness",
+//     status: {
+//       finished: false,
+//     },
+//   },
+//   {
+//     todo: "Delete button will delete the task from the list",
+//     status: {
+//       finished: false,
+//     },
+//   },
+//   {
+//     todo: "Complete tasks show at the end with strikethrough",
+//     status: {
+//       finished: false,
+//     },
+//   },
+//   {
+//     todo: "Marking in complete will put it back in pending list",
+//     status: {
+//       finished: false,
+//     },
+//   },
+// ];
+const todoLists = JSON.parse(localStorage.getItem("todoLists")) || [
   {
     todoListTitle: "Task Tracker",
     content: [
@@ -119,6 +119,11 @@ function renderTodoLists() {
   todoLists.forEach((todoList, index) => {
     todoListsHtml += `
     <div class="todoList-container">
+          <button class="close-todoList"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" ">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+          </i></button>
+
           <!-- title of todoList -->
           <div class="header-todoList">
             <h2 class="title-todoList">${todoList.todoListTitle}</h2>
@@ -142,12 +147,23 @@ function renderTodoLists() {
   document.querySelector(".todoLists-container").innerHTML = todoListsHtml;
 
   document.querySelectorAll(".todoList-container").forEach((item, index) => {
+
+    // create todoList
     item.querySelector(".add-btn").addEventListener("click", () => {
       const todoInput = item.querySelector(".todo-input").value;
       todoLists[index].content.push({ todo: todoInput, status: false });
+      saveToLocalStorage();
       renderTodoLists();
     });
 
+    // remove todoList
+    item.querySelector(".close-todoList").addEventListener("click", () => {
+      todoLists.splice(index, 1);
+      saveToLocalStorage();
+      renderTodoLists();
+    });
+
+    // make btn in each todoList interactive
     item.querySelectorAll(".todoList-item").forEach((todoItem, subIndex) => {
       const finishTask = todoItem.querySelector(".todo-status");
       const editBtn = todoItem.querySelector(".edit-btn");
@@ -157,7 +173,7 @@ function renderTodoLists() {
       finishTask.addEventListener("click", () => {
         // Toggle the finished state
         todoLists[index].content[subIndex].status.finished = !todoLists[index].content[subIndex].status.finished;
-        // saveToLocalStorage();
+        saveToLocalStorage();
         renderTodoLists();
       });
 
@@ -169,16 +185,15 @@ function renderTodoLists() {
       saveBtn.addEventListener("click", () => {
         todoLists[index].content[subIndex].todo = todoItem.querySelector(".todo-input-edited").value;
         todoItem.classList.remove("is-editing-todo-content");
-        // saveToLocalStorage();
+        saveToLocalStorage();
         renderTodoLists();
       });
 
       removeBtn.addEventListener("click", () => {
         todoLists[index].content.splice(subIndex, 1); // remove from list
-        // saveToLocalStorage();
+        saveToLocalStorage();
         renderTodoLists();
       });
-
     });
   });
 }
@@ -211,7 +226,20 @@ function renderTodoList(content, index) {
 }
 
 document.querySelector(".create-todoList-btn").addEventListener("click", () => {
-  const todoListTitle = document.querySelector(".TodoList-input").value;
-  todoLists.push({ todoListTitle, content: [] });
+  const todoListTitle = document.querySelector(".TodoList-input");
+  const error = document.querySelector(".error");
+  if (!todoListTitle.value) {
+    error.innerHTML = "Please input your TodoList title before create a new one!";
+    return;
+  }
+
+  todoLists.push({ todoListTitle: todoListTitle.value, content: [] });
+  todoListTitle.value = "";
+  error.innerHTML = "";
   renderTodoLists();
 });
+
+
+function saveToLocalStorage() {
+  localStorage.setItem("todoLists", JSON.stringify(todoLists));
+}
