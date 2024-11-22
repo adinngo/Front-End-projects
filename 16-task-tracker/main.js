@@ -30,9 +30,17 @@
 //     },
 //   },
 // ];
+const now =   new Date();
+const fullDateTime = `${now.getDate()}/${
+  now.getMonth() + 1
+}/${now.getFullYear()} - ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+console.log("Current Date and Time:", fullDateTime); // e.g., "21/11/2024 - 14:45:30"
+
+//data todoLists
 const todoLists = JSON.parse(localStorage.getItem("todoLists")) || [
   {
     todoListTitle: "Task Tracker",
+    dateTime: fullDateTime,
     content: [
       {
         todo: "New task is created and added to the list",
@@ -69,6 +77,7 @@ const todoLists = JSON.parse(localStorage.getItem("todoLists")) || [
 
   {
     todoListTitle: "Do Workout",
+    dateTime: fullDateTime,
     content: [
       {
         todo: "New task is created and added to the list",
@@ -105,12 +114,7 @@ const todoLists = JSON.parse(localStorage.getItem("todoLists")) || [
 ];
 
 // format date and time
-const now = new Date();
 
-const fullDateTime = `${now.getDate()}/${
-  now.getMonth() + 1
-}/${now.getFullYear()} - ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
-console.log("Current Date and Time:", fullDateTime); // e.g., "21/11/2024 14:45:30"
 
 renderTodoLists();
 
@@ -127,7 +131,7 @@ function renderTodoLists() {
           <!-- title of todoList -->
           <div class="header-todoList">
             <h2 class="title-todoList">${todoList.todoListTitle}</h2>
-            <span class="date">${fullDateTime}</span>
+            <span class="date">${todoList.dateTime}</span>
           </div>
 
           <!-- input todo of todoList -->
@@ -233,9 +237,16 @@ document.querySelector(".create-todoList-btn").addEventListener("click", () => {
     return;
   }
 
-  todoLists.push({ todoListTitle: todoListTitle.value, content: [] });
+  todoLists.push(
+    { 
+    todoListTitle: todoListTitle.value, 
+    dateTime: fullDateTime,
+    content: [] 
+    }
+  );
   todoListTitle.value = "";
   error.innerHTML = "";
+  saveToLocalStorage();
   renderTodoLists();
 });
 
