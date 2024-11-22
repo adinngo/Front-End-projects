@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 50%;
+}
+body {
+  font-family: serif;
+}
+.container {
+  max-width: 500px;
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+  margin: 2rem auto;
+}
+h1 {
+  font-size: 3rem;
+}
+p {
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem 0.5rem;
+}
+.action {
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.value-input {
+  width: 100px;
+  padding: 1rem;
+  border: 1px solid black;
+}
+.value-input,
+.from-units,
+.to-units {
+  border-radius: 8px;
+}
+.submit {
+  padding: 1rem;
+  background-color: #0a0a23;
+  color: #f5f6f7;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.result {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 2rem;
+  color: darkgreen;
+  margin: 0;
+  height: 4rem;
+}
+
+@media screen and (min-width: 425px) {
+  .action {
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+}
