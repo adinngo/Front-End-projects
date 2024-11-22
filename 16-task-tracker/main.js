@@ -150,12 +150,21 @@ function renderTodoLists() {
   document.querySelector(".todoLists-container").innerHTML = todoListsHtml;
 
   document.querySelectorAll(".todoList-container").forEach((item, index) => {
-    // create todoList
-    item.querySelector(".add-btn").addEventListener("click", () => {
+    function createTodoListItem() {
       const todoInput = item.querySelector(".todo-input").value;
       todoLists[index].content.push({ todo: todoInput, status: false });
       saveToLocalStorage();
       renderTodoLists();
+    }
+    // create todoList item
+    item.querySelector(".add-btn").addEventListener("click", () => {
+      createTodoListItem();
+    });
+    //add event keydown for creating a new todoList item
+    item.querySelector(".todo-input").addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        createTodoListItem();
+      }
     });
 
     // remove todoList
@@ -179,18 +188,32 @@ function renderTodoLists() {
         renderTodoLists();
       });
 
+      // event click button edit
       editBtn.addEventListener("click", () => {
         todoItem.classList.add("is-editing-todo-content");
-        todoItem.querySelector(".todo-input-edited").value = todoList[index].todo;
+        todoItem.querySelector(".todo-input-edited").value = todoLists[index].content[subIndex].todo;
       });
 
-      saveBtn.addEventListener("click", () => {
+      function saveTodoListItemEdited() {
         todoLists[index].content[subIndex].todo = todoItem.querySelector(".todo-input-edited").value;
         todoItem.classList.remove("is-editing-todo-content");
         saveToLocalStorage();
         renderTodoLists();
+      }
+
+      // add event keydown for editing a new todoList item
+      todoItem.querySelector(".todo-input-edited").addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          saveTodoListItemEdited();
+        }
       });
 
+      // save todoList item after editing
+      saveBtn.addEventListener("click", () => {
+        saveTodoListItemEdited();
+      });
+
+      // remove todoList item
       removeBtn.addEventListener("click", () => {
         todoLists[index].content.splice(subIndex, 1); // remove from list
         saveToLocalStorage();
@@ -227,9 +250,12 @@ function renderTodoList(content, index) {
   return todoListHtml;
 }
 
+//event click for creating a new todoList
 document.querySelector(".create-todoList-btn").addEventListener("click", () => {
   createTodoList();
 });
+
+// add event keydown for creating a new todoList
 document.querySelector(".TodoList-input").addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     createTodoList();
@@ -254,7 +280,6 @@ function createTodoList() {
   saveToLocalStorage();
   renderTodoLists();
 }
-
 
 function saveToLocalStorage() {
   localStorage.setItem("todoLists", JSON.stringify(todoLists));

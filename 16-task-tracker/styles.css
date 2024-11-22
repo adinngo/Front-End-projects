@@ -113,7 +113,11 @@ h1 {
   align-items: center;
   gap: 0.5rem;
 }
-
+.title-todoList {
+  font-size: 1.8rem;
+  word-spacing: 0.3em;
+  text-transform: capitalize;
+}
 .date {
   color: gray;
   font-weight: bold;
@@ -130,7 +134,7 @@ h1 {
 }
 
 .todo-input {
-  font-size: 1rem;
+  font-size: 2rem;
   border: none;
   background-color: transparent;
   outline: none;
