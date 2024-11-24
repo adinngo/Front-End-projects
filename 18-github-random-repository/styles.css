@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 50%;
+}
+body {
+  font-family: serif;
+}
+.container {
+  max-width: 300px;
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+  margin: 2rem auto;
+}
+.current-state {
+  font-size: 1.5rem;
+  margin-block: 1rem 1.5rem;
+  text-align: center;
+
+}
+
+.title {
+  font-size: 2rem;
+}
+.languages-select {
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 100%;
+  margin-block: 1.5rem 1rem;
+}
+
+.result {
+  border-radius: 1rem;
+  height: 150px;
+  background-color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+.result p {
+  font-size: 1.5rem;
+}
+.btn {
+  margin-block: 1rem 1.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: darkgreen;
+}
+
+/* handle the case if user does not chose a specific language */
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.loading {
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+
+.error-result {
+  background-color: #FFC9C9;
+}
+
+.error-btn {
+  background-color: #E03131;
+}
+.success-btn {
+  background-color: black;
+  color: #fff;
+}
+.success-result {
+  display: block;
+  padding: 1rem;
+  border: 1px solid black;
+  background-color: #fff;
+  color: black;
+}
+.success-result h2 {
+  font-size: 1.8rem;
+  color: black;
+}
+.success-result h2 a {
+  color: inherit;
+}
+.success-result p {
+  color: gray;
+  height: 70%;
+  padding-block: 1rem;
+}
+.success-result ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.success-result ul li {
+  font-size: 1.3rem;
+}
