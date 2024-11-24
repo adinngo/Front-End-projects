@@ -2,6 +2,9 @@ const searchBtn = document.querySelector(".search-btn");
 const languageSelect = document.querySelector(".languages-select");
 const result = document.querySelector(".result");
 const currentState = document.querySelector(".current-state");
+
+
+// get languages data
 async function loadLanguages() {
   let languagesDataHTML = "";
   const response = await fetch(
@@ -30,11 +33,15 @@ function checkSelected() {
 /* end of handling the case if user does not chose a specific language */
 
 // Function to fetch random repository
-async function fetchRandomRepo(language) {
+function loadingState() {
   //loading state
+  result.classList.remove("success-result");
   currentState.textContent = "Loading State";
   result.innerHTML = `<p class="loading">Loading...</p>`;
   searchBtn.disabled = true;
+}
+async function fetchRandomRepo(language) {
+  loadingState();
 
   const apiUrl = `https://api.github.com/search/repositories?q=language:${language}&sort=stars&order=desc&per_page=100`;
 
@@ -69,11 +76,11 @@ async function fetchRandomRepo(language) {
 }
 
 searchBtn.addEventListener("click", () => {
-  fetchRandomRepo(languageSelect);
+  fetchRandomRepo(languageSelect.value);
 });
 
 function displayRepoDetails(repo) {
-  // change current state
+  // change current state to success
   currentState.textContent = "Success";
 
   //change result to success
