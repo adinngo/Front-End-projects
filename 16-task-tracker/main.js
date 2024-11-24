@@ -152,7 +152,7 @@ function renderTodoLists() {
   document.querySelectorAll(".todoList-container").forEach((item, index) => {
     function createTodoListItem() {
       const todoInput = item.querySelector(".todo-input").value;
-      todoLists[index].content.push({ todo: todoInput, status: false });
+      todoLists[index].content.push({ todo: todoInput, status: { finished: false } });
       saveToLocalStorage();
       renderTodoLists();
     }
@@ -182,6 +182,7 @@ function renderTodoLists() {
       const saveBtn = todoItem.querySelector(".save-btn");
 
       finishTask.addEventListener("click", () => {
+        console.log(todoLists[index].content[subIndex].status.finished);
         // Toggle the finished state
         todoLists[index].content[subIndex].status.finished = !todoLists[index].content[subIndex].status.finished;
         saveToLocalStorage();
