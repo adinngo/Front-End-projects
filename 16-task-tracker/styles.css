@@ -38,7 +38,7 @@ h1 {
 }
 
 .TodoList-input {
-  font-size: 2rem;
+  font-size: 1.5rem;
   outline: none;
   border: none;
   width: 90%;
@@ -59,7 +59,7 @@ h1 {
 /* error when input empty */
 .error {
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.3rem;
   color: red;
   height: 27px; /* keep a space and when it appear, it does't push todoLists-container  */
 
@@ -78,10 +78,7 @@ h1 {
   margin: 0 auto;
   align-items: baseline;
   margin-block: 3rem;
-
 }
-
-
 
 /* item*/
 .todoList-container {
@@ -134,7 +131,7 @@ h1 {
 }
 
 .todo-input {
-  font-size: 2rem;
+  font-size: 1.5rem;
   border: none;
   background-color: transparent;
   outline: none;
@@ -209,7 +206,7 @@ h1 {
 }
 
 .todo-input-edited {
-  font-size: 2rem;
+  font-size: 1.5rem;
   border: none;
   outline: none;
   background-color: transparent;
@@ -268,6 +265,21 @@ h1 {
     border-radius: 1rem;
   } */
 
+  .todoLists-input-wrapper {
+    width: 70%;
+  }
+
+  .error {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .todoLists-input-wrapper {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1030px) {
   .todoLists-input-wrapper {
     width: 50%;
   }
