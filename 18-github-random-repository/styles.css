@@ -73,6 +73,7 @@ body {
 
 .error-result {
   background-color: #FFC9C9;
+  padding: 1rem;
 }
 
 .error-btn {

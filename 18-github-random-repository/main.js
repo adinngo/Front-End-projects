@@ -3,6 +3,17 @@ const languageSelect = document.querySelector(".languages-select");
 const result = document.querySelector(".result");
 const currentState = document.querySelector(".current-state");
 
+// create status messages to handle error status
+const statusMessages = {
+  400: "Bad Request - The server couldn't understand your request.",
+  401: "Unauthorized - Please check your credentials.",
+  403: "Forbidden - You don't have permission to access this resource.",
+  404: "Not Found - The requested resource was not found.",
+  422: "Unprocessable Entity - The input data is invalid.",
+  500: "Internal Server Error - Something went wrong on the server.",
+  502: "Bad Gateway - The server is unavailable at the moment.",
+  503: "Service Unavailable - The server is temporarily down.",
+};
 
 // get languages data
 async function loadLanguages() {
@@ -45,10 +56,12 @@ async function fetchRandomRepo(language) {
 
   const apiUrl = `https://api.github.com/search/repositories?q=language:${language}&sort=stars&order=desc&per_page=100`;
 
+  
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {
-      throw new Error("Error fetching repositories");
+      const customMessage = statusMessages[response.status];
+      throw new Error(`Error: ${response.status} ${customMessage}`);
     }
 
     const data = await response.json();
@@ -66,10 +79,10 @@ async function fetchRandomRepo(language) {
     //change css button to error
     searchBtn.textContent = "Click to retry";
     searchBtn.classList.add("error-btn");
-
-    // change result to error
-    result.innerHTML = `<p class="error-result">${error.message}</p>`;
     searchBtn.classList.remove("success-btn");
+    // change result to error
+    result.classList.add("error-result");
+    result.innerHTML = `<p>${error.message}</p>`;
   } finally {
     searchBtn.disabled = false;
   }
