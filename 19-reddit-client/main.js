@@ -114,23 +114,33 @@ async function addSubReddit(subRedditName) {
       <p class="error">Error: ${error.message}</p>
 
     `;
-  } 
+  }
 }
 
 addSubredditBtn.addEventListener("click", async () => {
   const subRedditName = subredditNameInput.value;
-  await addSubReddit(subRedditName);
+  for (const item of subredditList) {
+    if (item.title === subRedditName) {
+      subredditNameInput.value = "";
+      alert(`You already search ${subRedditName}`);
+      return;
+    }
+  }
   subredditNameInput.value = "";
+  await addSubReddit(subRedditName);
 });
 
-let subredditList = [];
+let subredditList = JSON.parse(localStorage.getItem("subredditList")) || [];
 
 function saveSubRedditList() {
   localStorage.setItem("subredditList", JSON.stringify(subredditList));
 }
 
 function refreshSubRedditList() {
-  //remove the old one to avoid save two times when addSubredditBtn.click()
+  /*clear the old one to avoid save two times 'cause func addSubReddit work, 
+  subredditList push the old subreddit again*/
+  subredditList = [];
+
   let storedList = JSON.parse(localStorage.getItem("subredditList")) || [];
 
   storedList.forEach(async (item) => {
