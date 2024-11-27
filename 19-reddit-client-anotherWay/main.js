@@ -14,22 +14,22 @@ const statusMessages = {
   503: "Service Unavailable - The server is temporarily down.",
 };
 
-// checkFilled();
-// function checkFilled() {
-//   if (subredditNameInput.value) {
-//     addSubredditBtn.disabled = false;
-//   } else {
-//     addSubredditBtn.disabled = true;
-//   }
-// }
-// subredditNameInput.addEventListener("input", checkFilled);\
+// handle the case user doesn't input name when reload the page
+checkFilled();
+function checkFilled() {
+  if (subredditNameInput.value) {
+    addSubredditBtn.disabled = false;
+  } else {
+    addSubredditBtn.disabled = true;
+  }
+}
+// handle the case user doesn't input name
+subredditNameInput.addEventListener("input", checkFilled);
 
 // save data
-const subredditList = [];
+let subredditList = [];
 
 async function fetchSubReddit(subredditName) {
-  // const loadingState = subredditElement.querySelector(".subreddit-loading-spinner");
-
   try {
     const response = await fetch(`https://www.reddit.com/r/${subredditName}.json`);
     if (!response.ok) {
@@ -51,7 +51,7 @@ async function fetchSubReddit(subredditName) {
 
 async function addSubReddit(subredditName) {
   // Sanitize subreddit name
-  const sanitizedSubRedditName = subredditName.trim().replace(/\s+/g, "");
+  const sanitizedSubRedditName = subredditName.toLowerCase().trim().replace(/\s+/g, "");
 
   console.log(sanitizedSubRedditName);
 
@@ -79,10 +79,11 @@ async function addSubReddit(subredditName) {
       errorStatus: error.message,
       posts: [],
     });
-  } finally {
-    renderSubRedditList();
   }
+  saveToLocal();
+  renderSubRedditList();
 }
+
 function renderSubRedditList() {
   console.log(subredditList);
 
@@ -95,7 +96,9 @@ function renderSubRedditList() {
       <div class="subreddit-heading">
 
         <h2 class="subreddit-name">
-        <a href="https://www.reddit.com/r/${subreddit.subredditTitle}"target="_blank">${subreddit.subredditTitle}</a></h2>
+        <a href="https://www.reddit.com/r/${subreddit.subredditTitle}"target="_blank">r/${
+      subreddit.subredditTitle
+    }</a></h2>
 
         <button class="setting-btn">
           <svg
@@ -134,6 +137,43 @@ function renderSubRedditList() {
     `;
   });
   subRedditsContainer.innerHTML = subredditListHTML;
+
+  document.querySelectorAll(".subreddit").forEach((subreddit, index) => {
+    const settingButton = subreddit.querySelector(".setting-btn");
+    const settingSection = subreddit.querySelector(".setting-section");
+    const deleteButton = subreddit.querySelector(".delete-btn");
+    const refreshButton = subreddit.querySelector(".refresh-btn");
+
+    settingButton.addEventListener("click", () => {
+      settingSection.classList.toggle("setting-section-appearance");
+      subreddit.querySelector(".subreddit-posts").classList.toggle("subreddit-posts-opacity");
+    });
+
+    deleteButton.addEventListener("click", () => {
+      subredditList.splice(index, 1);
+      saveToLocal();
+      renderSubRedditList();
+    });
+
+    refreshButton.addEventListener("click", async () => {
+      subreddit.innerHTML = `
+        <h2 class="subreddit-name">${subredditList[index].subredditTitle}</h2>
+        <p class="loading">Loading...</p>;
+      `;
+
+      let postsFetched = [];
+
+      try {
+        postsFetched = await fetchSubReddit(subredditList[index].subredditTitle);
+    
+        subredditList[index].posts = postsFetched;           
+      } catch (error) {
+     
+        subredditList[index].posts = []; 
+      }
+      renderSubRedditList();
+    });
+  });
 }
 function renderSubRedditPosts(posts) {
   let postsHTML = "";
@@ -155,15 +195,34 @@ function renderSubRedditPosts(posts) {
   });
   return postsHTML;
 }
+
 addSubredditBtn.addEventListener("click", async () => {
   const subRedditName = subredditNameInput.value;
-  //  for (const item of subredditList) {
-  //    if (item.title === subRedditName) {
-  //      subredditNameInput.value = "";
-  //      alert(`You already search ${subRedditName}`);
-  //      return;
-  //    }
-  //  }
   subredditNameInput.value = "";
+
+  // handle the case user doesn't input name when clicking button
+  checkFilled();
+
+  for (const subreddit of subredditList) {
+    if (subreddit.subredditTitle === subRedditName) {
+      alert(`You already search ${subRedditName}`);
+      return;
+    }
+  }
   await addSubReddit(subRedditName);
 });
+
+function saveToLocal() {
+  localStorage.setItem("subredditList", JSON.stringify(subredditList));
+}
+function refreshSubRedditList() {
+  subredditList = [];
+
+  const storedList = JSON.parse(localStorage.getItem("subredditList")) || [];
+
+  storedList.forEach(async (item) => {
+    await addSubReddit(item.subredditTitle);
+  });
+}
+
+refreshSubRedditList();
