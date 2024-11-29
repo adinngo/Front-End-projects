@@ -139,7 +139,7 @@ main {
 .subreddit-posts {
   min-height: 30rem;
   max-height: 45rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin-block: 2rem;
 }
 .subreddit-posts-opacity {

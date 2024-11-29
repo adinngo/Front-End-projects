@@ -169,7 +169,7 @@ function renderSubRedditList() {
         subredditList[index].posts = postsFetched;           
       } catch (error) {
      
-        subredditList[index].posts = []; 
+        subredditList[index].errorStatus = error.message; 
       }
       renderSubRedditList();
     });
