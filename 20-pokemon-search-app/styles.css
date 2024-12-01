@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 50%;
+}
+body {
+  font-family: serif;
+  margin: auto;
+}
+main {
+  padding-block: 5rem;
+  padding-inline: 2rem;
+}
+.title {
+  font-size: 5rem;
+  margin-block: 2rem;
+  text-align: center;
+}
+.container {
+  max-width: 450px;
+  width: 100%;
+  padding: 2rem;
+  background-color: #f5f6f7;
+  border: 1px solid #f5f6f7;
+  border-radius: 15px;
+  margin: 0 auto;
+  box-shadow: 10px 10px 0px 0px rgba(223, 220, 220, 0.75);
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0 2rem 0;
+}
+.search-form label {
+  font-size: 2rem;
+}
+#search-input {
+  width: 50%;
+}
+#search-input,
+#search-button {
+  padding: 1rem;
+}
+#search-button {
+  cursor: pointer;
+  background-color: #7f21ab;
+  color: white;
+  border-radius: 2rem;
+  border: none;
+  transition: all 0.3s;
+}
+#search-button:hover {
+  opacity: 0.8;
+}
+.display {
+  margin-bottom: 10px;
+  padding: 1.5rem;
+  background-color: #f0f1f7;
+}
+.name-id {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.size {
+  margin-block: 1rem;
+  font-size: 2.5rem;
+}
+#img-container {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-container img {
+  object-fit: cover;
+  width: 100%;
+}
+.type {
+  width: 66px;
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  background-color: red;
+  text-transform: uppercase;
+}
+table {
+  width: 100%;
+  text-align: center;
+}
+table td,
+th {
+  background-color: #7f21ab;
+  color: white;
+  padding: 1.7rem;
+  color: white;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+/* bgc for types */
+.normal {
+  background-color: #b7b7aa;
+}
+
+.fire {
+  background-color: #ff6f52;
+}
+
+.water {
+  background-color: #42a1ff;
+}
+
+.electric {
+  background-color: #fecc33;
+}
+
+.grass {
+  background-color: #78cc55;
+}
+
+.ice {
+  background-color: #66ccfe;
+}
+
+.fighting {
+  background-color: #d3887e;
+}
+
+.poison {
+  background-color: #c68bb7;
+}
+
+.ground {
+  background-color: #dfba52;
+}
+
+.flying {
+  background-color: #8899ff;
+}
+
+.psychic {
+  background-color: #ff66a3;
+}
+
+.bug {
+  background-color: #aabb23;
+}
+
+.rock {
+  background-color: #baaa66;
+}
+
+.ghost {
+  background-color: #9995d0;
+}
+
+.dragon {
+  background-color: #9e93f1;
+}
+
+.dark {
+  background-color: #b59682;
+}
+
+.steel {
+  background-color: #abaabb;
+}
+
+.fairy {
+  background-color: #ed99ed;
+}
+
+@media screen and (max-width: 425px) {
+  .title {
+    font-size: 4rem;
+  }
+}
